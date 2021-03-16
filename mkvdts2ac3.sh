@@ -44,7 +44,7 @@ WD="/tmp" # Working Directory (Use the -w/--wd argument to change)
 
 # These are so you can make quick changes to the cmdline args without having to search and replace the entire script
 DUCMD="$(which \du) -k"
-RSYNCCMD="$(which \rsync) --progress -a"
+RSYNCCMD="$(which \rsync) --progress -rltzuv"
 
 # Check for a .mkvdts2ac3.rc file in user's home directory for custom defaults
 if [ -f ~/.mkvdts2ac3.rc ]; then
