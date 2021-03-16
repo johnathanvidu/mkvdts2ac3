@@ -400,7 +400,7 @@ if [ -z $DTSTRACK ]; then
 	DTSTRACK="DTSTRACK" #Value for debugging
 	dopause
 	if [ $EXECUTE = 1 ]; then
-		DTSTRACK=$(mkvmerge -i "$MKVFILE" | grep -m 1 "${AUDIOTRACKPREFIX}DTS)" | cut -d ":" -f 1 | cut -d " " -f 3)
+		DTSTRACK=$(mkvmerge -i "$MKVFILE" | grep -m 1 "${AUDIOTRACKPREFIX}DTS" | cut -d ":" -f 1 | cut -d " " -f 3)
 
 		# Check to make sure there is a DTS track in the MVK
 		if [ -z $DTSTRACK ]; then
