@@ -358,13 +358,8 @@ fi
 
 # Make some adjustments based on the version of mkvtoolnix
 MKVTOOLNIXVERSION=$(mkvmerge -V | cut -d " " -f 2 | sed s/\[\^0-9\]//g)
-if [ ${MKVTOOLNIXVERSION} -lt 670 ]; then
-	AUDIOTRACKPREFIX="audio (A_"
-	VIDEOTRACKPREFIX="video (V_"
-else
-	AUDIOTRACKPREFIX="audio ("
-	VIDEOTRACKPREFIX="video ("
-fi
+AUDIOTRACKPREFIX="audio ("
+VIDEOTRACKPREFIX="video ("
 
 # Added check to see if AC3 track exists. If so, no need to continue
 if [ "$(mkvmerge -i "$MKVFILE" | grep -i "${AUDIOTRACKPREFIX}AC-3")" ]; then
